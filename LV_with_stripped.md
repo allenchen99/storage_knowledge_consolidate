@@ -1,5 +1,5 @@
 # Step to simulate storage poolized
-## Create 4 LUNs and attach to Linux
+## 1. Create 4 LUNs and attach to Linux
 ls /dev/mapper/3600601600d4051001*
 /dev/mapper/3600601600d4051001d87eb671856b050  /dev/mapper/3600601600d4051001e87eb67733df03d  /dev/mapper/3600601600d4051001e87eb67a940b4bb  /dev/mapper/3600601600d4051001e87eb67d2a709b7
 sles15-chena18-dev-01:~ # ls -al /dev/mapper/3600601600d4051001*
@@ -12,7 +12,7 @@ sles15-chena18-dev-01:~ # multipath -ll |grep DGC
 3600601600d4051001e87eb67a940b4bb dm-3 DGC,VRAID
 3600601600d4051001e87eb67d2a709b7 dm-4 DGC,VRAID
 3600601600d4051001d87eb671856b050 dm-2 DGC,VRAID
-## Create a Volume Group with the 4 physical volumes
+## 2. Create a Volume Group with the 4 physical volumes
 sles15-chena18-dev-01:~ # vgcreate vg_striped /dev/mapper/3600601600d4051001d87eb671856b050 /dev/mapper/3600601600d4051001e87eb67733df03d /dev/mapper/3600601600d4051001e87eb67a940b4bb /dev/mapper/3600601600d4051001e87eb67d2a709b7
   Physical volume "/dev/mapper/3600601600d4051001d87eb671856b050" successfully created.
   Physical volume "/dev/mapper/3600601600d4051001e87eb67733df03d" successfully created.
@@ -20,12 +20,12 @@ sles15-chena18-dev-01:~ # vgcreate vg_striped /dev/mapper/3600601600d4051001d87e
   Physical volume "/dev/mapper/3600601600d4051001e87eb67d2a709b7" successfully created.
   Volume group "vg_striped" successfully created
  
-## Create LV on top of LV, the slice is 256M from the 4 physical volume
+## 3. Create LV on top of LV, the slice is 256M from the 4 physical volume
 sles15-chena18-dev-01:~ # lvcreate -L 400G -i 4 -I 256M -n lv_striped vg_striped
   Reducing requested stripe size 256.00 MiB to maximum, physical extent size 4.00 MiB.
   Logical volume "lv_striped" created.
  
-## Format LV as ext4
+## 4. Format LV as ext4
 sles15-chena18-dev-01:~ # mkfs.ext4 /dev/vg_striped/lv_striped
 mke2fs 1.43.8 (1-Jan-2018)
 Discarding device blocks: done
