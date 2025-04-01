@@ -49,3 +49,9 @@ Filesystem                         Size  Used Avail Use% Mounted on
  
 ## Next step is Create a file on the pool, format as a FS export to use (this is LUN) 
 ## Format it as a UFS, mount them on VDM and export to user as CIFS/nfs
+![image](https://github.com/user-attachments/assets/0fa4b4bb-2138-46fa-8a83-c048f14615c3)
+Each pv be composed of sequence of chunk called (physical extents)
+  - physical extents: HP-UX fix size, Veritas variably-size
+  - physical extents map to logical extents
+![image](https://github.com/user-attachments/assets/7e94a639-bf30-49d1-8e57-9e4b256a5a52)
+
