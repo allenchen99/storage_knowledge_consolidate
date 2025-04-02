@@ -1,4 +1,4 @@
-	## 全书内容：
+# 全书内容：
 		1. Understanding Virtualization
 		2. KVM Internal
 		3. Setting Up Standalone KVM Virtualization
@@ -11,8 +11,7 @@
 		10. Installing and Configurating the Virtual 
 		11. Start Your First Virtual Machine in oVirt
 		
-		
-	# 1. Understanding Virtualization
+## 1. Understanding Virtualization
 	Advantages of virtualization:
 		○ Server Consolidation
 		○ Service Isolation
