@@ -18,3 +18,10 @@
     1. S3 Copy
     4. RDS Copy
 8. 数据合规和法务
+## VPS (Virtual Private Clouds) and Subnet
+1. IPV4 CIDR block
+2. IPV6 CIDR block
+3. VPC Create
+    1. GUI
+    2. CLI
+    3. Powershell
