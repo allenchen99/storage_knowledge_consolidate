@@ -25,3 +25,5 @@
     1. GUI
     2. CLI
     3. Powershell
+## Network Connectivity
+1. Enable VPC Peering,
