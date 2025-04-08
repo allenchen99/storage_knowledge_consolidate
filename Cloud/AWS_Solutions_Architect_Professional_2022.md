@@ -39,3 +39,29 @@
      4. Dedicated standalone physical hardware appliance
      5. Gateway Types: S3 File, FSxFile, Tape (VTLU), Volume (iSCSI)
 5. CDN (410+ CDN global servers)
+
+## Database and Caching
+MySQL, SQL Server, DynamoDB, and ElasticCache （Memcached, Redis)
+
+## Deploy EC2 instance
+1. Ways: Console, CLI, Powershell  
+2. Manage by SSH, Console, CLI, and POWERSHELL  
+3. RDP port: 3389  
+
+## Manage Instance Sizing
+1. By CLI/Console,Powershell  
+2. Monitor Peroformance  
+3. Chang size by Console, CLI  
+4. Auto Scaling
+
+## Aplication Containers  
+1. Deoploy container
+2. Amazon Elastic Containers services (ECS)
+3. Amazon Elastic Container Registry
+4. Deploying an Elastic Kubernetes Service Cluster
+
+## AWS Developer Services
+1. AWS secrets manager
+2. Deploying a MESSAGE qUEUE
+3. AWS Step Function, Lambda Function, CI/CD Pipelines, and Code Pipleline
+4. AWS Openstack
