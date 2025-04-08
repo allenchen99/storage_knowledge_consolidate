@@ -27,3 +27,15 @@
     3. Powershell
 ## Network Connectivity
 1. Enable VPC Peering,
+
+## S3
+1. Create bucket first by CLI/GUI/Powershell
+2. Configureing S3 Storage Tier (performance,archive, time to store)
+3. Allowing Limited Access with S3 bucket policies
+4. Storage Gateway
+     1. Storage Gateway
+     2. On-premises VMs: ESXi, Hyper-V, KVM (SMB or NFS)
+     3. EC2 instance
+     4. Dedicated standalone physical hardware appliance
+     5. Gateway Types: S3 File, FSxFile, Tape (VTLU), Volume (iSCSI)
+5. CDN (410+ CDN global servers)
