@@ -1,0 +1,48 @@
+｛
+constants => {
+test time
+=> '4M',
+warmup_time
+=> '60s',
+offset
+=> 'OB',
+interval
+=> '5S',
+},
+workloads => [
+{ io size => '512B', read_percentage => 100, thread_count => 32, seek_percent => 'random', sd_suffix=>'_512b',},
+{ io_size => '512B', read percentage => 80, thread_count => 32, seek_percent => 'random', sd_suffix=>'_512b',},
+{ io_size => '512B', read_ percentage => 67, thread_count => 32, seek percent => 'random', sd_suffix=>'_512b',},
+{ io size => '512B', read percentage => 50, thread_count => 32, seek percent => 'random', sd_suffix=>'_512b',},
+{ io_size => '512B', read_percentage => 0, thread_count => 32, seek percent => 'random', sd_suffix=>'_512b',},
+{ io_size => '4KB', read percentage => 100, thread_count => 32, seek_percent => 'random', sd_suffix=>'_4k',},
+{ io_size => '4KB', read percentage => 80, thread_count => 32, seek_percent => 'random', sd_suffix=>'_4k',},
+{ i0_size => '4KB', read percentage => 50, thread_count => 32, seek_percent => 'random', sd_suffix=>'_4k',},
+（1ostZe ー＞·4KE、zead petCentage ＝＞0、thread  count ！＞32／seeh Dercent ー＞（tandom。／ad suEEix＝V4河、
+{ io_size => '8KB', read_percentage => 100, thread_count => 32, seek_ percent => 'random', sd_suffix=>'_8k',},
+{ io_size => '8KB', read percentage => 80, thread_count => 32, seek_percent => 'random', sd_suffix=>'_8k',},
+{ io_size => '8KB', read percentage => 67, thread_count => 32, seek_percent => 'random', sd_suffix=>'_8k',},
+{ io_size => '8KB', read percentage => 0, thread_count => 32, seek_percent => 'random', sd_suffix=>'_8k',},
+{ io_size => '16KB', read_percentage => 100, thread_count => 32, seek_percent => 'random', sd_suffix=>'_16k',},
+{ io_size => '16KB', read_percentage => 80, thread_count => 32, seek_percent => 'random', sd_suffix=>'_16k',},
+{ io size => '16KB', read percentage => 50, thread_count => 32, seek percent => 'random', sd suffix=>'_16k',},
+{ io_size => '16KB', read percentage => 0, thread_count => 32, seek_percent => 'random', sd_suffix=>'_16k',},
+{ io_size => '32KB', read_percentage => 100, thread_count => 32, seek_percent => 'random', sd_suffix=>'_32k',},
+{io_size => '32KB', read percentage => 80, thread_count => 32, seek_percent => 'random', sd_suffix=>'_32k',},
+{ io_size => '32KB', read_percentage => 50, thread_count => 32, seek_percent => 'random', sd_suffix=>'_32k',},
+
+{ 1o_size => '64KB', read_percentage => 100, thread_count => 32, seek_percent => 'random', sd_suffix=>'_64k',},{ io_size => '64KB', read percentage => 80, thread_count => 32, seek_percent => 'random', sd_ suffix=>'_64k',},
+{ io_size => '64KB', read_percentage => 67, thread_count => 32, seek _percent => 'random', sd_suffix=>'_64k',},
+{ io_size => '64KB', read_percentage => 50, thread_count => 32, seek percent => 'random', sd_suffix=>'_ 64k',},
+{ io_size => '64KB', read percentage => 0, thread_count => 32, seek percent => 'random', sd_suffix=>'_64k',},
+{ io_size => '256KB', read_percentage => 100, thread_count => 32, seek_percent => 'random', sd_suffix=>'_256k',},
+(1ostZe !>·256KB、tead DerCentage !>80/thread Count !>32-seeh DeECent !>Irandom。、sd SuEELxーV256Kン
+{ io_size => '256KB', read percentage => 67, thread_count => 32, seek percent => 'random', sd_suffix=>'_256k',},
+{ io_size => '256KB', read percentage => 50, thread_count => 32, seek_ percent => 'random', sd_ suffix=>'_256k',},
+{ io_size => '256KB', read_percentage => 0, thread_count => 32, seek percent => 'random', sd_suffix=>'_256k',},
+{ io_size => '4KB', read_ percentage => 100, thread_count => 1, seek_percent => 'sequential', sd_suffix=>'_4k_seq',},{ io_size => '4KB', read_percentage => 0, thread_count => 1, seek percent => 'sequential', sd_suffix=>'_4k_seq',},
+{ io_size => '8KB', read percentage => 100, thread_count => 1, seek_percent => 'sequential', sd_suffix=>'_8k_seq',},{ io_size => '8KB', read_percentage => 0, thread_count => 1, seek_percent => 'sequential', sd_suffix=>'_8k_seq',},
+{ io_size => '32KB', read_ percentage => 100, thread_count => 1, seek_percent => 'sequential', sd_suffix=>'_32k_seq',},{ io_size => '32KB', read_percentage => 0, thread_count => 1, seek_percent => 'sequential', sd_suffix=>'_32k_seq',},
+{ io_size => '256KB', read percentage => 100, thread_count => 1, seek_ percent => 'sequential', sd_suffix=>'_256k_seg',},{ io_size => '256KB', read percentage => 0, thread_count => 1, seek_percent => 'sequential', sd_suffix=>'_256k_seg',},
+{ io_size => '1MB', read_percentage => 100, thread_count => 1, seek_percent => 'sequential', sd_suffix=>'_1m_seg',},{ io_size => '1MB', read_percentage => 0, thread_count => 1, seek_percent => 'sequential', sd_suffix=>'_1m_seq',},
+]
