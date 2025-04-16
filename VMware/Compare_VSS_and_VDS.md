@@ -1,11 +1,13 @@
-vSS
-Scenario	Load Balancing Policy	Requires Switch LACP	Network Failure Detection	优缺点
-Default/General Scenario	Route based on originating virtual port ID	❌ No	Link Status Only	简单，兼容好，但是不能充分利用多条NIC
-Switch does not support LACP, optimize bandwidth	Route based on source MAC hash	❌ No	Beacon Probing	比virtual port ID稍微均衡，但是不能动态调整
-Switch supports LACP, maximize bandwidth	Route based on IP hash	✅ Yes	Beacon Probing	实现真正的负载均衡，Switch LACP支持，需要至少三块NIC
-(source IP+Dest IP 计算hash)
-Failover only, no load balancing needed	Use explicit failover order	❌ No	Beacon Probing	仅关注HA，不许负载均衡
-# vSS vs vDS 对比（VMware 虚拟交换机）
+## vSS 常见场景与负载均衡策略选择
+
+| 场景说明                                 | 负载均衡策略                          | 是否需要交换机支持 LACP | 故障检测方式     | 优缺点说明                                               |
+|------------------------------------------|----------------------------------------|--------------------------|------------------|----------------------------------------------------------|
+| 默认/通用部署                             | Route based on originating virtual port ID | ❌ No                   | Link Status Only | 简单、兼容性好，但无法充分利用多条上行链路               |
+| 交换机不支持 LACP，需一定负载分担        | Route based on source MAC hash         | ❌ No                   | Beacon Probing   | 比虚拟端口 ID 更均衡，但仍非动态，均衡效果有限           |
+| 交换机支持 LACP，需要最大带宽利用        | Route based on IP hash (源+目标 IP hash) | ✅ Yes                 | Beacon Probing   | 真正负载均衡，需交换机侧配置 LACP，需至少三块物理 NIC    |
+| 仅关注高可用（Failover），不考虑均衡     | Use explicit failover order            | ❌ No                   | Beacon Probing   | 无负载均衡，仅做故障转移，适合关键业务主备 NIC 场景      |
+
+## vSS vs vDS 对比（VMware 虚拟交换机）
 
 | 特性/功能                 | vSS（Standard vSwitch）                            | vDS（Distributed vSwitch）                             |
 |--------------------------|----------------------------------------------------|--------------------------------------------------------|
