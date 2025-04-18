@@ -1,9 +1,9 @@
 {
     constants => {
-        test_time => '4M',
-        warmup_time => '60s',
+        test_time => '4H',
+        warmup_time => '5m',
         offset => 'OB',
-        interval => '5S',
+        interval => '10S',
     },
     workloads => [{
             io_size => '512B',
