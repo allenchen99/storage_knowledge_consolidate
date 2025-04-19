@@ -2,7 +2,7 @@
     constants => {
         test_time => '4H',
         warmup_time => '5m',
-        offset => 'OB',
+        offset => 'TE',
         interval => '10S',
     },
     workloads => [{
