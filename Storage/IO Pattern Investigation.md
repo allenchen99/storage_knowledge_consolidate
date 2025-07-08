@@ -21,6 +21,7 @@
 iostat -x 1
 iotop -aoP   # 累计 I/O 排序
 pidstat -d -p <PID> 1
+```
 
 ## 2. 使用 fio job replay 或 workload capture 工具
 如果你能控制或模拟应用，可在生产或测试环境使用工具重现并分析实际 I/O pattern。
@@ -28,9 +29,6 @@ pidstat -d -p <PID> 1
 ### 🔧 方法 A：fio job trace
 使用 fio 的 --write_iolog 和 --read_iolog 功能：
 
-bash
-Copy
-Edit
 fio --filename=/path/to/file --rw=randrw --bs=4k --runtime=60 --write_iolog=trace.log
 然后可用 --read_iolog 回放、分析。
 
