@@ -5,15 +5,26 @@
 ### iSCSI 路径：
 
 ```
-[应用层] → [OS IO调度层] → [iSCSI Initiator 驱动层] → [网络层 TCP/IP] →
-[交换网络 or SAN网络] → [iSCSI Target] → [后端块存储/RAID] → [磁盘]
+[应用层] 
+[OS IO调度层] 
+[iSCSI Initiator 驱动层] 
+[网络层 TCP/IP] 
+[交换网络 or SAN网络]
+[iSCSI Target] 
+[后端块存储/RAID] 
+[磁盘]
 ```
 
 ### FC 路径：
 
 ```
-[应用层] → [OS IO栈] → [HBA 驱动层] → [光纤 SAN 网络] →
-[FC Target] → [后端块存储] → [磁盘]
+[应用层]
+[OS IO栈] 
+[HBA 驱动层] 
+[光纤 SAN 网络] 
+[FC Target] 
+[后端块存储] 
+[磁盘]
 ```
 
 ---
@@ -85,8 +96,14 @@
 ### NFS 路径：
 
 ```
-[应用层] → [VFS/NFS 客户端] → [内核 TCP/IP 协议栈] → [网络] →
-[NFS 服务端] → [本地文件系统] → [块存储] → [磁盘]
+[应用层] | IO大小顺序，flush 机制，r/w cache, user类型
+[VFS/NFS 客户端] | async/sync mount, mount r/w size, buffer size, file lock
+[内核 TCP/IP 协议栈]
+[网络] |最简单就是通过ping来检查，如果要知道具体原因就是tcpdump,
+[NFS 服务端] | NAS Server， 主要通过nas server的log，已经服务器端的网络TCP/IP session等等
+[本地文件系统] |nfsstat -s, 服务端的nfs thread, dead lock
+[块存储] | slice allocation, 碎片整理，RAID rebuild， thread count
+[磁盘] |磁盘的IOPS/Bandwidth/Latency: NLSAS/SAS/SAS Flash/NVMe Flash
 ```
 
 ---
